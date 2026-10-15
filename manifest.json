@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "HubSpot Employee Complete Macros v9.5",
+  "version": "9.5.0",
+  "description": "Stable employee macros with exactly one awaiting-status pair and reliable auto-solve.",
+  "permissions": [
+    "activeTab",
+    "clipboardRead",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://app-eu1.hubspot.com/*"
+  ],
+  "action": {
+    "default_title": "HubSpot Macro Settings",
+    "default_popup": "options.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app-eu1.hubspot.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

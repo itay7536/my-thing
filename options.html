@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HubSpot Macro Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>HubSpot Macro Settings</h1>
+    <p class="intro">Open this menu while HubSpot is active. The extension will open the HubSpot account menu and detect the signed-in employee automatically.</p>
+    <button id="detect" type="button" class="detect">Detect from HubSpot</button>
+    <div id="detected" class="detected" hidden></div>
+
+    <label>
+      Employee name in HubSpot
+      <input id="ownerName" type="text" placeholder="e.g. Joseph Rozenblum" autocomplete="name">
+    </label>
+
+    <label>
+      Employee email <span>(recommended)</span>
+      <input id="ownerEmail" type="email" placeholder="e.g. employee@company.com" autocomplete="email">
+    </label>
+
+    <label>
+      Shortcut button text
+      <input id="buttonLabel" type="text" maxlength="8" placeholder="e.g. J.R.">
+    </label>
+
+    <label>
+      Auto-solve button text
+      <input id="solveLabel" type="text" maxlength="60" placeholder="e.g. Marked solved by Joseph">
+    </label>
+
+    <label class="check">
+      <input id="autoApply" type="checkbox">
+      Automatically click Apply/Save after selecting the owner
+    </label>
+
+    <div class="actions">
+      <button id="save" type="button">Save settings</button>
+      <button id="reset" type="button" class="secondary">Reset</button>
+    </div>
+    <div id="status" role="status" aria-live="polite"></div>
+
+    <details>
+      <summary>How matching works</summary>
+      <p>The extension first matches the exact HubSpot owner name. If an email is entered, the matching result must also contain that email. This avoids selecting another employee with a similar name.</p>
+    </details>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>
